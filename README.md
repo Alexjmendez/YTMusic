@@ -19,16 +19,32 @@ Aplicación de escritorio para Windows (Python + Tkinter) que usa la librería
   - **Exportar CSV…** guarda el historial en un archivo CSV.
 - FFmpeg viene incluido vía `imageio-ffmpeg`; no hace falta instalarlo.
 
-## Uso
+## Instalar en cualquier PC (sin Python ni git)
+
+1. Descarga `YTMusic-Setup-x.y.z.exe` de la sección
+   [Releases](https://github.com/Alexjmendez/YTMusic/releases).
+2. Ejecútalo y sigue el asistente (no necesita permisos de administrador).
+   Crea accesos directos en el menú Inicio y, opcionalmente, en el escritorio.
+3. Para desinstalar: *Configuración → Aplicaciones → YTMusic → Desinstalar*.
+
+> Windows SmartScreen puede avisar porque el instalador no está firmado:
+> pulsa *Más información → Ejecutar de todas formas*.
+
+## Ejecutar desde el código fuente
 
 1. Instala Python 3.10+ desde <https://www.python.org/downloads/> marcando
    *Add python.exe to PATH*.
 2. Doble clic en `ejecutar.bat` (la primera vez crea el entorno e instala dependencias).
 
-Para generar un `.exe` independiente: doble clic en `compilar_exe.bat` → `dist\YTMusic.exe`.
-
 Si YouTube deja de funcionar, normalmente basta con actualizar yt-dlp
-(`ejecutar.bat` lo hace en cada arranque).
+(`ejecutar.bat` lo hace en cada arranque). En la versión instalada hay que
+generar e instalar un instalador nuevo.
+
+## Crear el instalador
+
+Requiere [Inno Setup 6](https://jrsoftware.org/isinfo.php)
+(`winget install JRSoftware.InnoSetup`). Doble clic en `crear_instalador.bat`
+→ `dist\YTMusic-Setup-x.y.z.exe`. La versión se cambia en `installer.iss`.
 
 > Descarga solo contenido del que tengas derechos o permiso, respetando los
 > términos de servicio de YouTube.
